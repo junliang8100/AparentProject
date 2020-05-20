@@ -1,0 +1,20 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: userProvider01
+  main:
+    allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
+  datasource:
+    url: jdbc:mysql://localhost:3306/jpa01
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka,http://localhost:9000/eureka
